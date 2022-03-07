@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RechargeOnline.Models.Brand>
+@using RechargeOnline.Models;
+
+
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+@{ IEnumerable<Categorie> idcate = ViewBag.ListCategory as IEnumerable<Categorie>; }
+@{ IEnumerable<Brand> Brandlist = ViewBag.ListBrand as IEnumerable<Brand>; }
+
+<section class="page-top-section set-bg" data-setbg="../../Content/Temp/img/page-top-bg/4.jpg">
+    <div class="container">
+        <h2>Nạp tiền</h2>
+        <nav class="site-breadcrumb">
+        </nav>
+    </div>
+</section>
+<div style="text-align:center">
+    <h2 style="margin-top:4%;text-align:center;margin-bottom:4%">
+        Chọn nhà mạng muốn nạp
+    </h2>
+    <div class="row" style="margin-bottom:10%">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <table class="table" style="width:100%">
+
+                @foreach (var item in Brandlist)
+                {
+
+                    <tr>
+
+                        <td>
+                            <img src="@Url.Content(item.Img)" width="150" height="100" />
+                        </td>
+
+                        <td style="font-size:20px;padding-top:4%">
+                            @item.Name
+                        </td>
+
+                        <td>
+                            <div style="font-size:20px;margin-top:13%">
+                                <a href="@Url.Action("Index", "Products", new { idbrand = item.Id,idcategories = idcate.First().Id})">Chọn</a>
+                            </div>
+
+                        </td>
+
+                    </tr>
+                }
+
+            </table>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

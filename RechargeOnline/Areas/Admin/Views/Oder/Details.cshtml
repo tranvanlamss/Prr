@@ -1,0 +1,66 @@
+﻿@model RechargeOnline.Models.Oder
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Oder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Product)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_Product)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Card_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Card_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Create_At)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Create_At)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
